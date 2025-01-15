@@ -1,0 +1,499 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+html, body {
+    height: 100%; 
+    margin: 0;    
+    padding: 0;  
+}
+
+body {
+    background-color: #f4f4f9;  
+    font-family: Arial, sans-serif;
+    color: #333;  
+}
+
+/* Header and Navigation Bar */
+header {
+    background-color: #333;
+    padding: 20px 0;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+header nav ul li {
+    margin: 0 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #ff5722;
+}
+
+/* Making Navbar Responsive */
+input[type="checkbox"] {
+    display: none;
+}
+
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    margin: 5px;
+}
+
+@media (max-width: 768px) {
+    header nav ul {
+        display: none;
+        flex-direction: column;
+        background: #333;
+        position: absolute;
+        top: 60px;
+        width: 100%;
+        left: 0;
+        padding: 20px 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    header nav ul.show {
+        display: flex;
+    }
+    .burger {
+        display: flex;
+    }
+}
+
+input[type="checkbox"]:checked ~ nav ul {
+    display: flex;
+}
+
+/* Hero Section */
+#hero {
+    background: linear-gradient(135deg, rgba(72, 61, 139, 0.7), rgba(0, 128, 128, 0.7)), center/cover no-repeat;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 20px;
+    height: 450px;
+}
+
+#hero .hero-content {
+    text-align: left;
+    margin-right: auto;
+    margin-left: 7%;
+}
+
+#hero .hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+    text-align: justify;
+}
+
+#hero .hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: #f0f0f0;
+}
+
+#hero .btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    transition: background-color 0.3s ease;
+}
+
+#hero .btn:hover {
+    background-color: #45a049;
+}
+
+#hero .hero-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#hero .photo {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    margin-left: 400px;
+}
+
+@media (max-width: 768px) {
+    #hero {
+        flex-direction: column;
+        padding: 20px;
+        height: auto;
+    }
+
+    #hero .hero-content {
+        text-align: center;
+        margin-left: 0;
+    }
+
+    #hero .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    #hero .hero-content p {
+        font-size: 1rem;
+    }
+
+    #hero .btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    #hero .photo {
+        margin-left: 0;
+        margin-bottom: 20px;
+        width: 250px;
+        height: 250px;
+    }
+}
+
+/* About,Skills,Projects,Testimonials Section */
+#skills, #projects, #testimonials{
+    background-color: #fff; 
+    padding: 50px 0; 
+    text-align: center;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#about h2, #qualifications h2, #skills h2, #projects h2, #testimonials h2{
+    font-size: 2.5rem;
+    margin-top:30px;
+    margin-bottom: 40px;
+    color: #4CAF50; 
+    text-decoration: underline;
+    text-align: center;
+}
+
+.skills-box, .projects-box, .testimonials-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px; 
+    justify-content: center;
+    max-width: 2000px;
+    margin: auto;
+}
+
+.skill-content, .project-content, .testimonial-content  {
+    background-color: #fff; 
+    padding: 50px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    border-radius: 10px; 
+    width: calc(33.333% - 20px); 
+    box-sizing: border-box; 
+    font-size: 1.5rem;
+    color: #333;
+}
+
+#skills h3, #projects h3 {
+    font-size: 2.25rem;
+    text-decoration: underline;
+    margin-bottom: 30px;
+    color: darkblue; 
+}
+
+.skill-content:hover, .project-content:hover, .testimonial-content:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* About Section */
+#about {
+    background-color: #fff; 
+    color: #333; /
+}
+
+#about ul {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #333;
+    text-align: center;
+}
+
+#about ul li {
+    
+    margin-bottom: 20px;
+    list-style-type: none;
+} 
+#about, #testimonials p {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: auto;  
+}
+/* Qualifications Section*/
+#qualificaions {
+    width: 75%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+ 
+/* Table styling */
+.qualifications-table {
+    width: 80%;
+    border-collapse: collapse;
+    max-width: 1200px;
+    margin: auto;
+}
+.qualifications-table th,   .qualifications-table td {
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding: 12px;
+    text-align: left;
+    border: 1.5px solid #ddd;
+} 
+.qualifications-table th {
+    font-size: 1.75rem;
+    background-color: #4CAF50;
+    color: white;
+}  
+.qualifications-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+} 
+.qualifications-table tr:hover {
+    background-color: #ddd;
+}  
+/* Projects section */
+.project-content img {
+    width: 300px;
+    height: 500px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for smaller screens */
+@media (max-width: 768px) {
+    .skills-box , .projects-box, .qualifications-table, .testimonials-box{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .skill-content, .project-content, .qualifications-table , .testimonial-content {
+        width: 90%;
+        margin: 10px auto;
+    }
+}
+
+/* Styles for very large screens */
+@media (min-width: 1200px) {
+    .skills-box, .projects-box, .qualifications-table , .testimonials-box {
+        gap: 80px; 
+    }
+
+    .skill-content, .project-content, .qualifications-table , .testimonial-content {
+        width: calc(25% - 20px); 
+    }
+}
+
+/* Fade In and Slide Up Animations */
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+.fade-in.active {
+    opacity: 1;
+}
+
+.slide-up {
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.slide-up.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Footer */
+footer {
+    background: #2C2B4F;
+    color: #fff;
+    text-align: center;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    max-width: 1200px;
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.address-social {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    margin-right: 30px;
+}
+
+.social-media, .contact-details {
+    flex: 1;
+    margin-right: 30px;
+}
+
+.social-media h3, .contact-details h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.social-media ul li, .contact-details p {
+    font-size: 1.5rem;
+    color: #ddd;
+}
+
+/* Social media styling */
+.social-media ul {
+    list-style: none;
+    padding: 0;
+}
+
+.social-media ul li {
+    margin-bottom: 10px;
+}
+
+.social-media ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-media ul li a:hover {
+    color: #e67e22;
+}
+
+.social-media ul li a i {
+    margin-right: 10px;
+}
+
+.contact-details p {
+    font-size: 1.5rem;
+    color: #ddd;
+    margin-top: 10px;
+}
+
+/* Contact Us Section */
+.contact-footer {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    max-width: 600px;
+    width: 100%;
+}
+
+.contact-footer h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.contact-footer p{
+    color:#2C2B4F;
+    margin: 20px;
+}
+.contact-footer form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-footer input, .contact-footer textarea {
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1.25rem;
+}
+
+.contact-footer button {
+    background: #e67e22;
+    color: #fff;
+    padding: 15px;
+    font-size: 1.25rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.contact-footer button:hover {
+    background: #d35400;
+}
+
+/* Making  the footer responsive */
+@media screen and (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .address-social {
+        flex-direction: column;
+        margin-right: 0;
+    }
+    
+    .social-media, .contact-details {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .contact-footer {
+        width: 100%;
+        padding: 20px;
+    }
+}
